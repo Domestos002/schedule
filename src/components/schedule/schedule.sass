@@ -1,0 +1,161 @@
+@import "./../variables"
+@import "./../mixins"
+
+.schedule
+  margin-top: 40px
+  &__item
+    border-bottom: 1px solid gainsboro
+    overflow: hidden
+    &:not(:first-child)
+      margin-top: 20px
+  &__content
+    margin: 10px 0
+    display: none
+    &--active
+      display: block
+  &__tab-list
+    display: flex
+    border-bottom: 1px solid #ddd
+  &__day-header
+    font-size: 2em
+    text-align: center
+    font-family: "Roboto Condensed", sans-serif
+    color: white
+    font-weight: 300
+    background-color: #556080
+    padding: 10px 0 10px 0
+    box-shadow: 1px 2px 7px 0 rgba(0, 0, 0, 0.2)
+  &__location-caption
+    font-size: 1.5em
+    text-align: center
+    font-weight: 400
+    background-color: lightslategray
+    color: white
+    cursor: pointer
+    padding: 5px
+    box-shadow: 1px 2px 7px 0 rgba(0, 0, 0, 0.2)
+    -webkit-transition: box-shadow 0.3s, border-top 0.3s
+  &__list
+    margin-top: 20px
+  &__tab
+    margin-right: 2px
+    line-height: 1.42857143
+    border: 1px solid transparent
+    border-radius: 4px 4px 0 0
+    position: relative
+    display: block
+    padding: 10px 15px
+    color: #337ab7
+    text-decoration: none
+    cursor: pointer
+    margin-bottom: -1px
+    &--active
+      color: #555
+      cursor: default
+      background-color: #fff
+      border: 1px solid #ddd
+      border-bottom-color: transparent
+  &__location-list
+    +min-respond-to(md)
+      margin-left: 200px
+    +min-respond-to(lg)
+      margin-left: 300px
+  &__location-item
+    position: relative
+    border-left: 1px solid #dcdcdc
+    padding: 40px 20px 20px 20px
+    margin-bottom: 0
+    &::before
+      content: ""
+      border-top: 1px solid #dcdcdc
+      position: absolute
+      z-index: 0
+      left: -200px
+      width: 200px
+      top: 55px
+    &::after
+      +min-respond-to(md)
+        content: ""
+        border: 6px solid #dcdcdc
+        position: absolute
+        z-index: 1
+        left: -50px
+        width: 19px
+        height: 19px
+        background-color: white
+        top: 46px
+        border-radius: 50%
+      +min-respond-to(lg)
+        left: -100px
+
+.schedule-event
+  &__title
+    margin-bottom: 0
+  &__moderator-title
+    font-weight: 700
+    margin-bottom: 0
+  &__report
+    margin-top: 65px
+  &__time
+    padding: 5px 0
+    display: block
+    margin-bottom: 20px
+    background-color: #52ae32
+    color: white
+    text-align: center
+    box-shadow: 1px 2px 7px 0 rgba(0, 0, 0, 0.2)
+    +min-respond-to(md)
+      position: absolute
+      left: -200px
+      display: inline-block
+      width: 120px
+      margin-bottom: 0
+    +min-respond-to(lg)
+      left: -300px
+  &__header
+    font-size: 1.3em
+    position: relative
+    font-weight: 400
+    margin-left: 60px
+    margin-bottom: 20px
+    cursor: pointer
+    &::before
+      left: -80px
+      content: ""
+      border-top: 1px solid gainsboro
+      top: 15px
+      width: 60px
+      height: 5px
+      position: absolute
+      z-index: 0
+      display: inline-block
+    &::after
+      content: ""
+      left: -23px
+      background-color: gainsboro
+      top: 13px
+      width: 5px
+      height: 5px
+      position: absolute
+      z-index: 0
+      display: inline-block
+      border-radius: 50%
+  &__description
+    font-size: 0.8em
+    margin-top: 10px
+    font-weight: 300
+
+
+[aria-expanded="true"] > .caret
+  transform: rotate(180deg)
+
+.caret
+  display: inline-block
+  width: 0
+  height: 0
+  margin-left: 2px
+  vertical-align: middle
+  border-top: 4px dashed
+  border-top: 4px solid
+  border-right: 4px solid transparent
+  border-left: 4px solid transparent

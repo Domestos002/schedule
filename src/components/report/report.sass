@@ -1,0 +1,123 @@
+@import "./../variables"
+@import "./../mixins"
+
+.report
+  margin-bottom: 20px
+  display: flex
+  padding: 20px 10px
+  position: relative
+  background-color: white
+  box-shadow: 1px 2px 7px 0 rgba(0, 0, 0, 0.2)
+  -webkit-transition: box-shadow 0.3s, border-top 0.3s
+  &__video-link
+    margin: 0 5px
+    color: #337ab7
+    text-decoration: none
+    font-family: "Roboto Condensed", sans-serif
+    font-weight: 300
+  &__icon
+    width: 16px
+    height: 16px
+    color: gray
+  &__image
+    flex: 0 0 40px
+    padding-right: 10px
+    display: flex
+    +min-respond-to(md)
+      flex: 0 0 100px
+      padding-right: 10px
+  &__info
+    width: 100%
+  &__speaker-info
+    margin-top: 0
+    display: flex
+    font-size: 1.1em
+    font-weight: bold
+    margin-bottom: 5px
+    flex-direction: column
+    +min-respond-to(md)
+      flex-direction: column
+      margin-top: 0
+  &__author
+    padding-right: 5px
+  &__caption
+    color: #333
+    font-size: 1em
+    font-family: "Roboto Condensed", sans-serif
+    font-weight: 400
+  &__lecture
+    font-size: 1em
+    font-family: "Roboto Condensed", sans-serif
+    font-weight: 400
+    margin-top: 10px
+    display: flex
+    align-items: center
+  &__duration
+    position: absolute
+    left: -100px
+    top: calc(40%)
+    background-color: lightgray
+    color: white
+    display: inline-block
+    padding: 0 10px
+    width: 50px
+    text-align: center
+    &::after
+      content: ""
+      border-top: 1px solid #dcdcdc
+      position: absolute
+      z-index: 0
+      width: 50px
+      top: calc(10px)
+      right: -50px
+  &__pic
+    border-radius: 50%
+    width: 40px
+    height: 40px
+    background-size: cover
+    background-position: center top
+    background-repeat: no-repeat
+    background-color: lightgray
+    margin-left: auto
+    margin-right: auto
+    position: relative
+    border: 2px solid whitesmoke
+    z-index: 1
+    +min-respond-to(md)
+      width: 70px
+      height: 70px
+      border: 4px solid whitesmoke
+  &__country-info
+    display: flex
+    flex-wrap: wrap
+    font-weight: normal
+  &__country-flag
+    width: 20px
+    height: 20px
+    margin-right: 10px
+    &[data-id="876"]
+      background-image: url("//siterscs.com/content/lp/conf2018/images/flags/248-russia.svg")
+    &[data-id="1262"]
+      background-image: url("//siterscs.com/content/lp/conf2018/images/flags/260-united-kingdom.svg")
+    &[data-id="1343"]
+      background-image: url("//siterscs.com/content/lp/conf2018/images/flags/205-switzerland.svg")
+    &[data-id="1291"]
+      background-image: url("//siterscs.com/content/lp/conf2018/images/flags/034-china.svg")
+    &[data-id="1351"]
+      background-image: url("//siterscs.com/content/lp/conf2018/images/flags/063-japan.svg")
+    &[data-id="1282"]
+      background-image: url("//siterscs.com/content/lp/conf2018/images/flags/179-ireland.svg")
+    &[data-id="1322"]
+      background-image: url("//siterscs.com/content/lp/conf2018/images/flags/226-united-states.svg")
+    &[data-id="1349"]
+      background-image: url("//siterscs.com/content/lp/conf2018/images/flags/094-south-korea.svg")
+    &[data-id="1261"]
+      background-image: url("//siterscs.com/content/lp/conf2018/images/flags/255-brazil.svg")
+    &[data-id="1258"]
+      background-image: url("//siterscs.com/content/lp/conf2018/images/flags/165-belgium.svg")
+    &[data-id="1284"]
+      background-image: url("//siterscs.com/content/lp/conf2018/images/flags/013-italy.svg")
+    &[data-id="1311"]
+      background-image: url("//siterscs.com/content/lp/conf2018/images/flags/237-netherlands.svg")
+    &[data-id="1344"]
+      background-image: url("//siterscs.com/content/lp/conf2018/images/flags/184-sweden.svg")
