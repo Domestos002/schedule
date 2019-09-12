@@ -26,8 +26,7 @@
                                     <div class="schedule-event__session">
                                         <div class="schedule-event__header" v-b-toggle="'event' + event.Id">
                                             <p class="schedule-event__title">
-                                                {{ event.Caption }}
-                                                <span class="caret" v-if="event.Moderators.length > 0"></span>
+                                                {{ event.Caption }}&nbsp;<span class="caret" v-if="event.Moderators.length > 0"></span>
                                             </p>
                                             <div class="schedule-event__description" v-if="event.Description">
                                                 {{ event.Description }}
