@@ -1,6 +1,6 @@
 import data from './data.json'
 import schedule from './components/schedule/schedule.vue'
-import { isEmpty, capitalize } from 'lodash'
+import { capitalize } from 'lodash'
 
 export default {
     name: 'app',
@@ -51,18 +51,14 @@ export default {
                             }
                         });
 
-                        if(!isEmpty(moderators)) {
-                            moderators = moderators.map(moder => {
-                                return {
-                                    Caption: moder.Person.Caption,
-                                    ComponentId: moder.Person.ComponentId,
-                                    Id: moder.Id,
-                                    DefaultImageId: moder.Person.DefaultImageId,
-                                }
-                            });
-                        } else {
-                            moderators = {}
-                        }
+                        moderators = moderators.map(moder => {
+                            return {
+                                Caption: moder.Person.Caption,
+                                ComponentId: moder.Person.ComponentId,
+                                Id: moder.Id,
+                                DefaultImageId: moder.Person.DefaultImageId,
+                            }
+                        });
 
                         return {
                             Caption: this.getFieldValue(target, ev, 'Caption'),
@@ -87,15 +83,15 @@ export default {
         },
         getFieldValue: function(target, object, field){
             const isDefault = target === 'ru';
-            if(isDefault){
+            if(isDefault) {
                 return object[field]
+            }
+
+            if(object.ObjectDataVersionList) {
+                const versionField = object.ObjectDataVersionList.find(el => el.ObjectFieldName === field);
+                return  versionField ? versionField.Value : 'not found';
             } else {
-                if(object.ObjectDataVersionList) {
-                    const versionField = object.ObjectDataVersionList.find(el => el.ObjectFieldName === field);
-                    return  versionField ? versionField.Value : 'not found';
-                } else {
-                    return 'not found'
-                }
+                return 'not found'
             }
         },
         toggleLocale: function() {
