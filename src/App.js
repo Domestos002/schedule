@@ -26,7 +26,6 @@ export default {
     methods: {
         parseDate: function (target) {
             const days = this.inputData.ScheduleDays;
-            const isDefault = target === 'ru';
             let resultDays = [];
             Object.keys(days).map((key) => {
                 let result = {};
